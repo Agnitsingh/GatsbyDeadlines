@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+body {
+  background-color: #F4F4F4;
+}
+
+
+
+.head {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF
+}
+
+.logo {
+  width: 250px; /* Adjust the width as needed */
+  height: auto; /* This maintains the aspect ratio */
+  display: inline-block;
+  margin-left: 8rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  margin-top: 140px;
+}
+
+.text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 80px;
+  margin-left: 8rem;
+  margin-top: -12rem;
+  margin-right: 18rem;
+  font-weight: 700;
+  color: #08104d;
+  line-height: 1.2;
+}
+
+.textSmall {
+  margin-top: -140px;
+  margin-bottom: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  margin-left: 8rem;
+  color: #08104d;
+  font-weight: 400;
+}
+
+.myImg{
+  margin-top: -70px;
+}
+
+.dimg {
+  width: 350px;
+  margin-top: 2rem;
+  margin-left: 24rem;
+  margin-right: 8rem;
+}
+
+.deadline-list {
+  list-style: none;
+}
+
+.button {
+  margin-top: -4rem;
+  margin-left: 8rem;
+  margin-bottom: 5rem;
+}
+
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  height: 50px;
+  width: 180px;
+  padding: 8px;
+  border-radius: 30px;
+  background-color: #FF723B;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.links{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.link1 a {
+  text-decoration: none;
+  font-size: 34px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #AA451E;
+}
+
+.link2 a {
+  font-size: 34px;
+  text-decoration: none;
+  
+  font-weight: 700;
+  color: #AA451E;
+}
+
+.links {
+  margin-top: -1rem;
+}
+
+.link1:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.link2:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.fall {
+  margin-top: 3.2rem;
+  font-size: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #08104d;
+  font-weight: bold;
+}
+
+.input-section {
+  margin-top: 2.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.enterDate {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: #08104d;
+  font-weight: 600;
+  margin-right: 16px;
+}
+
+.sbtn {
+  margin-left: 16px;
+  width: 110px;
+  font-size: 18px;
+  padding: 4px;
+  background-color: white;
+  color: #FF723B;
+  border-color: #FF723B; 
+}
+
+.deadlines{
+  border-radius: 5px;
+}
+
+.deadline-table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  width: 80%;
+  margin-top: 3rem; 
+  margin-bottom: 3rem;
+}
+
+.deadline-table th,
+.deadline-table td {
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.deadline-table th {
+  background-color: #2B2B2B;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.deadline-table tbody tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+.deadline-table tbody tr:nth-child(odd) {
+  background-color: #F6F6F6;
+}
+
+.ulink {
+  text-decoration: none;
+  color: #08104d;
+}
+
+.ulink:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    max-width: 80%;
+    width: 100%;
+    height: auto;
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .dimg {
+    margin: -20rem 0; /* Adjust the margins as needed */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%; /* Limit the width of the image */
+    height: auto;
+  }
+
+  .text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 150%;
+    margin-left: auto;
+    margin-right: auto; /* Adjust the margin-left as needed */
+    margin-top: 18rem;
+    font-weight: 700;
+    color: #08104d;
+    white-space: nowrap; /* Prevents text from wrapping */
+  }
+
+  .textSmall {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    font-family: 'Poppins', sans-serif;
+    margin-top: 360px;
+    margin-bottom: 10px;
+    color: #08104d;
+    font-size: 16px;
+    margin-left: 1.5rem;
+    white-space: nowrap;
+  }
+
+  .button{
+    width: 100%;
+  }
+
+  .btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    margin-top: 5.5rem; /* Adjust the margin as needed */
+    font-size: 16px;
+    height: 32px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: #08104d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    margin-top: -2.5rem; /* Adjust the margin as needed */
+    margin-left: 2rem;
+  }
+
+  .link1 a,
+  .link2 a {
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+    font-weight: 700;
+    color: #08104d;
+  }
+
+  .link1 a{
+    margin-left: 0rem;
+
+  }
+
+  .link2 a{
+    margin-left: 5rem;
+  }
+
+
+  .fall {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    margin-top: 3.3rem;
+  }
+
+  .input-section {
+    margin-top: 3.3rem;
+    margin-left: 1.5rem
+  }
+
+  .enterDate {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+
+  .sbtn {
+    margin-left: 8px;
+    height: 32px;
+    width: 50px;
+    font-size: 12px;
+    background-color: #FF72BB;
+    color: #FFFFFF;
+  }
+
+  .deadline-table {
+    margin-left: 1rem;
+    width: 80%;
+    margin-top: 3rem;
+  }
+
+  .deadline-table th,
+  .deadline-table td {
+    font-size: 14px;
+  }
+}
