@@ -5,10 +5,9 @@ import { Link } from 'gatsby';
 import './index.css';
 import { StaticImage } from 'gatsby-plugin-image';
 import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
-import PDFDocumentSpring from './PDFDocumentSpring';
+import PDFDocumentFall from './PDFDocumentFall';
 
-
-const SpringDeadline = ({ data }) => {
+const GradRight = ({ data }) => {
   const [inputDate, setInputDate] = useState('');
   const [showResults, setShowResults] = useState(false);
 
@@ -20,11 +19,14 @@ const SpringDeadline = ({ data }) => {
     setShowResults(true);
   };
 
+
   const { allMongodbDeadlinesDemoDd } = data;
   let filteredDeadlines = allMongodbDeadlinesDemoDd.nodes.filter(
-    (deadline) => deadline.Spring_Deadline <= inputDate
+    (deadline) => deadline.Fall_Deadline <= inputDate
   );
-  filteredDeadlines.sort((a, b) => new Date(a.Spring_Deadline) - new Date(b.Spring_Deadline)); // Sort deadlines in ascending order
+  filteredDeadlines.sort((a, b) => new Date(a.Fall_Deadline) - new Date(b.Fall_Deadline)); // Sort deadlines in ascending order
+
+ 
 
   return (
     <div className="page">
@@ -35,7 +37,7 @@ const SpringDeadline = ({ data }) => {
           className="logo"
         />
       </div>
-
+      
       <div className="colored">
         <div className="main">
 
@@ -64,11 +66,9 @@ const SpringDeadline = ({ data }) => {
 
       <div class="links">
         <span class="link"><Link to="/summer">Summer Deadlines</Link></span>
-        <span class="link"><Link to="/fall">Fall Deadlines</Link></span>
-        <span class="linkSpring"><Link to="/spring">Spring Deadlines</Link></span>
+        <span class="linkFall"><Link to="/fall">Fall Deadlines</Link></span>
+        <span class="link"><Link to="/spring">Spring Deadlines</Link></span>
       </div>
-
-
 
       <div className="input-section">
         <label class="enterDate" htmlFor="date-input">Enter a date:</label>
@@ -100,7 +100,7 @@ const SpringDeadline = ({ data }) => {
                   <td>{deadline.University_Name}</td>
                   <td>{deadline.Degree_Name}</td>
                   <td>{deadline.Program_Name}</td>
-                  <td>{format(new Date(deadline.Spring_Deadline), 'dd-MM-yyyy')}</td>
+                  <td>{format(new Date(deadline.Fall_Deadline), 'dd-MM-yyyy')}</td>
                   <td>
                     <a class="ulink" href={`https://${deadline.University_Link}`} target="_blank" rel="noopener noreferrer">
                       {deadline.University_Link}
@@ -114,7 +114,7 @@ const SpringDeadline = ({ data }) => {
 
         <div className="print-pdf">
       <PDFDownloadLink
-        document={<PDFDocumentSpring deadlines={filteredDeadlines} />}
+        document={<PDFDocumentFall deadlines={filteredDeadlines} />}
         fileName="university_deadlines.pdf"
       >
         {({ blob, url, loading, error }) =>
@@ -132,7 +132,7 @@ export const pageQuery = graphql`
   query {
     allMongodbDeadlinesDemoDd {
       nodes {
-        Spring_Deadline
+        Fall_Deadline
         University_Name
         Degree_Name
         Program_Name
@@ -142,4 +142,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default SpringDeadline;
+export default GradRight;

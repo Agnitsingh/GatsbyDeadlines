@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { graphql } from 'gatsby';
 import { format } from 'date-fns';
 import { Link } from 'gatsby';
 import './index.css';
+import { StaticImage } from 'gatsby-plugin-image';
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
 
 const GradRight = ({ data }) => {
   const [inputDate, setInputDate] = useState('');
@@ -31,80 +33,39 @@ const GradRight = ({ data }) => {
           className="logo"
         />
       </div>
-      <div className="main">
+      
+      <div className="colored">
+        <div className="main">
 
-        <div className="text">
-          Right Selection <br/> Bright Carrier
+          <div className="text">
+            Right Selection <br/> Bright Career
+          </div>
+
+          <div className="myImg">
+            <StaticImage src="../images/project.png" alt="Project Image" className="dimg" />
+          </div>
         </div>
 
-        <div className="myImg">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/2666/2666499.png"
-          alt="Additional Image"
-          className="dimg"
-        />
+        <div className="textSmall">
+          A smarter way to find the right university at right time
         </div>
-      </div>
 
-      <div className="textSmall">
-        A smarter way to find the right university at right time
-      </div>
-
-      <div className="button">
-        <a href="https://www.gradright.com/"><button className='btn'>Explore More</button></a>
-      </div>
-
-      <div class="links">
-        <span class="link1"><Link to="/summer">Summer Deadlines</Link></span>
-        <span class="link2"><Link to="/spring">Spring Deadlines</Link></span>
+        <div className="button">
+          <a href="https://www.gradright.com/"><button className='btn'>Explore More</button></a>
+        </div>
 
       </div>
 
       <div className="fall">
-        Check for universities with fall deadlines
+        Select intake to check the deadlines
       </div>
 
-      <div className="input-section">
-        <label class="enterDate" htmlFor="date-input">Enter a date:</label>
-        <input
-          type="date"
-          id="date-input"
-          value={inputDate}
-          onChange={handleInputChange}
-        />
-        <button class="sbtn" onClick={handleSubmit}>Submit</button>
+      <div class="links">
+        <span class="link"><Link to="/summer">Summer Deadlines</Link></span>
+        <span class="link"><Link to="/fall">Fall Deadlines</Link></span>
+        <span class="link"><Link to="/spring">Spring Deadlines</Link></span>
       </div>
 
-      {showResults && (
-        <div className="deadlines">
-          <table className="deadline-table">
-            <thead>
-              <tr>
-                <th>University Name</th>
-                <th>Degree Name</th>
-                <th>Program Name</th>
-                <th>Fall Deadline</th>
-                <th>University Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredDeadlines.map((deadline, index) => (
-                <tr key={index}>
-                  <td>{deadline.University_Name}</td>
-                  <td>{deadline.Degree_Name}</td>
-                  <td>{deadline.Program_Name}</td>
-                  <td>{format(new Date(deadline.Fall_Deadline), 'dd-MM-yyyy')}</td>
-                  <td>
-                    <a class="ulink" href={`https://${deadline.University_Link}`} target="_blank" rel="noopener noreferrer">
-                      {deadline.University_Link}
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
     </div>
   );
 };

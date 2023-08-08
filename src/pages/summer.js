@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { graphql } from 'gatsby';
 import { format } from 'date-fns';
 import { Link } from 'gatsby';
 import './index.css';
+import { StaticImage } from 'gatsby-plugin-image';
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
+import PDFDocumentSummer from './PDFDocumentSummer';
 
 const SummerDeadline = ({ data }) => {
   const [inputDate, setInputDate] = useState('');
@@ -31,35 +34,36 @@ const SummerDeadline = ({ data }) => {
           className="logo"
         />
       </div>
-      <div className="main">
+      <div className="colored">
+        <div className="main">
 
-        <div className="text">
-          Right Selection Bright Carrier
+          <div className="text">
+            Right Selection <br/> Bright Career
+          </div>
+
+          <div className="myImg">
+            <StaticImage src="../images/project.png" alt="Project Image" className="dimg" />
+          </div>
         </div>
 
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/2666/2666499.png"
-          alt="Additional Image"
-          className="dimg"
-        />
-      </div>
+        <div className="textSmall">
+          A smarter way to find the right university at right time
+        </div>
 
-      <div className="textSmall">
-        A smarter way to find the right university at right time
-      </div>
-
-      <div className="button">
-        <a href="https://www.gradright.com/"><button className='btn'>Explore More</button></a>
-      </div>
-
-      <div class="links">
-        <span class="link1"><Link to="/">Fall Deadlines</Link></span>
-        <span class="link2"><Link to="/spring">Spring Deadlines</Link></span>
+        <div className="button">
+          <a href="https://www.gradright.com/"><button className='btn'>Explore More</button></a>
+        </div>
 
       </div>
 
       <div className="fall">
-        Check for universities with summer deadlines
+        Select intake to check the deadlines
+      </div>
+
+      <div class="links">
+        <span class="linkSummer"><Link to="/summer">Summer Deadlines</Link></span>
+        <span class="link"><Link to="/fall">Fall Deadlines</Link></span>
+        <span class="link"><Link to="/spring">Spring Deadlines</Link></span>
       </div>
 
       <div className="input-section">
@@ -74,6 +78,7 @@ const SummerDeadline = ({ data }) => {
       </div>
 
       {showResults && (
+        <div>
         <div className="deadlines">
           <table className="deadline-table">
             <thead>
@@ -81,7 +86,7 @@ const SummerDeadline = ({ data }) => {
                 <th>University Name</th>
                 <th>Degree Name</th>
                 <th>Program Name</th>
-                <th>Summer Deadline</th>
+                <th>Deadline</th>
                 <th>University Link</th>
               </tr>
             </thead>
@@ -102,6 +107,18 @@ const SummerDeadline = ({ data }) => {
             </tbody>
           </table>
         </div>
+
+        <div className="print-pdf">
+      <PDFDownloadLink
+        document={<PDFDocumentSummer deadlines={filteredDeadlines} />}
+        fileName="university_deadlines.pdf"
+      >
+        {({ blob, url, loading, error }) =>
+          loading ? 'Loading document...' : 'Print as PDF'
+        }
+      </PDFDownloadLink>
+    </div>
+    </div>
       )}
     </div>
   );

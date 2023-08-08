@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
 body {
-  background-color: #F4F4F4;
+  background-color: #FFFFFF;
 }
 
 
@@ -23,25 +22,29 @@ body {
   padding: 10px;
 }
 
+.colored{
+  background-color: #EEEEFF;
+  min-height: 56vh;
+}
+
 .main {
   display: flex;
   align-items: center;
-  margin-top: 140px;
 }
 
 .text {
   font-family: 'Poppins', sans-serif;
-  font-size: 80px;
+  font-size: 70px;
   margin-left: 8rem;
-  margin-top: -12rem;
   margin-right: 18rem;
   font-weight: 700;
   color: #08104d;
   line-height: 1.2;
+  margin-top: -90px;
 }
 
 .textSmall {
-  margin-top: -140px;
+  margin-top: -150px;
   margin-bottom: 100px;
   font-family: 'Poppins', sans-serif;
   font-size: 26px;
@@ -51,14 +54,12 @@ body {
 }
 
 .myImg{
-  margin-top: -70px;
+margin-left: 30rem;
 }
 
 .dimg {
-  width: 350px;
-  margin-top: 2rem;
-  margin-left: 24rem;
-  margin-right: 8rem;
+  width: 380px;
+  margin-top: 3.5rem;
 }
 
 .deadline-list {
@@ -66,7 +67,7 @@ body {
 }
 
 .button {
-  margin-top: -4rem;
+  margin-top: -4.5rem;
   margin-left: 8rem;
   margin-bottom: 5rem;
 }
@@ -89,59 +90,71 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-}
-
-.link1 a {
-  text-decoration: none;
-  font-size: 34px;
-  text-decoration: none;
-  font-weight: 700;
-  color: #AA451E;
-}
-
-.link2 a {
-  font-size: 34px;
-  text-decoration: none;
   
-  font-weight: 700;
-  color: #AA451E;
+}
+
+.link a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  text-decoration: underline;
+  font-weight: 600;
+  color: #843A1D;
 }
 
 .links {
-  margin-top: -1rem;
+  margin-top: 2.5rem;
 }
 
-.link1:hover {
+.link:hover {
   text-decoration: underline;
   font-weight: bolder;
   cursor: pointer;
 }
 
-.link2:hover {
+.linkFall a{
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
   text-decoration: underline;
-  font-weight: bolder;
-  cursor: pointer;
+  font-weight: 600;
+  color: #FF723B;
+}
+
+.linkSummer a{
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  text-decoration: underline;
+  font-weight: 600;
+  color: #FF723B;
+}
+
+.linkSpring a{
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  text-decoration: underline;
+  font-weight: 600;
+  color: #FF723B;
 }
 
 .fall {
-  margin-top: 3.2rem;
-  font-size: 27px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 3.25rem;
+  font-size: 34px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #08104d;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .input-section {
-  margin-top: 2.6rem;
+  margin-top: 2.8rem;
   display: flex;
   justify-content: center;
 }
 
 .enterDate {
   font-family: 'Poppins', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   color: #08104d;
   font-weight: 600;
   margin-right: 16px;
@@ -153,8 +166,10 @@ body {
   font-size: 18px;
   padding: 4px;
   background-color: white;
+  border-color: #FF723B;
+  box-shadow: none;
+  border-radius: 16px;
   color: #FF723B;
-  border-color: #FF723B; 
 }
 
 .deadlines{
@@ -202,6 +217,27 @@ body {
   text-decoration: underline;
   font-weight: bolder;
   cursor: pointer;
+}
+
+.print-pdf {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  margin-top: -30px;
+}
+
+.print-pdf button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.print-pdf button:hover {
+  background-color: #0056b3;
 }
 
 @media (max-width: 600px) {
